@@ -14,7 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diagnóstico y Consultoría Comercial B2B | Cova Revenue</title>
-<meta name="description" content="Diagnóstico y consultoría comercial B2B para SaaS y Fintech en LATAM. Auditoría de pipeline, Revenue Operations (RevOps) y forecast para escalar ventas.">
+<meta name="description" content="Diagnóstico comercial B2B y Sprint de Cierre con tu equipo de ventas para SaaS y Fintech en LATAM. Auditoría de pipeline, RevOps, forecast y playbook de cierre con tus propios deals.">
 <meta name="keywords" content="diagnóstico comercial, consultoría comercial, auditoría comercial, revenue operations, RevOps, optimización comercial, estrategia comercial, consultoría de ventas, crecimiento B2B, pipeline de ventas, forecast comercial, proceso comercial, motor comercial, sales consulting, sales audit">
 <link rel="canonical" href="https://covarevenue.com/">
 
@@ -51,7 +51,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "image": "https://covarevenue.com/og-image.png",
   "description": "Diagnóstico y consultoría comercial B2B para founders y CROs de SaaS y Fintech en LATAM. Auditoría de pipeline, Revenue Operations y forecast.",
   "areaServed": ["MX", "CL", "Latin America"],
-  "serviceType": ["Diagnóstico Comercial", "Consultoría Comercial", "Auditoría Comercial", "Revenue Operations"],
+  "serviceType": ["Diagnóstico Comercial", "Consultoría Comercial", "Auditoría Comercial", "Revenue Operations", "Implementación comercial con equipos de ventas"],
   "founder": {
     "@type": "Person",
     "name": "John Covarrubias",
@@ -323,6 +323,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .scope-featured li{border-top-color:rgba(255,255,255,0.12);}
   .scope-note{margin-top:22px; font-size:12.5px; opacity:0.65; font-style:italic; text-align:center;}
   @media (max-width:900px){.scope-grid{grid-template-columns:1fr;} .scope-head{margin-top:52px;}}
+  .scope-meta{margin-top:14px; font-size:11.5px; font-weight:700; letter-spacing:0.04em; color:var(--highlight);}
+  .stat-band{margin-top:36px; display:flex; align-items:center; gap:28px; background:var(--primary); color:#fff; border:1px solid rgba(244,180,0,0.4); border-radius:12px; padding:28px 32px;}
+  .stat-band .stat-big{font-size:clamp(40px,6vw,56px); font-weight:800; color:var(--highlight); line-height:1; flex-shrink:0;}
+  .stat-band p{font-size:15px; line-height:1.5; color:#E5E7EB;}
+  .stat-band p b{color:#fff;}
+  .stat-band .stat-src{display:block; margin-top:8px; font-size:11.5px; color:#9AA3C4; font-style:italic;}
+  @media (max-width:600px){ .stat-band{flex-direction:column; align-items:flex-start; gap:14px; padding:24px 20px;} }
+  .sprint-box{margin-top:56px; background:var(--page-bg); border:1px solid rgba(244,180,0,0.4); border-radius:12px; padding:32px 28px;}
+  .sprint-box h3{font-size:clamp(19px,2.4vw,23px); line-height:1.25; margin:8px 0 8px;}
+  .sprint-box .sprint-sub{font-size:13.5px; opacity:0.75; max-width:680px; margin-bottom:22px;}
+  .sprint-table{width:100%; border-collapse:collapse; font-size:14px;}
+  .sprint-table th{text-align:left; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--kicker-color); padding:10px 12px; border-bottom:2px solid var(--card-border);}
+  .sprint-table td{padding:14px 12px; border-bottom:1px solid var(--card-border); vertical-align:top;}
+  .sprint-table td.num{font-weight:800; font-size:17px; white-space:nowrap;}
+  .sprint-table td.save{color:var(--accent-dark); font-weight:700; white-space:nowrap;}
+  [data-theme="dark"] .sprint-table td.save{color:var(--accent-soft);}
+  .sprint-table .tier{font-weight:700; display:block;}
+  .sprint-table .aud{font-size:12px; opacity:0.65;}
+  .sprint-guarantee{margin-top:22px; padding:16px 18px; border-left:3px solid var(--highlight); background:var(--card-bg); border-radius:0 8px 8px 0; font-size:14px;}
+  .sprint-guarantee b{color:var(--primary);}
+  [data-theme="dark"] .sprint-guarantee b{color:var(--highlight);}
+  .sprint-fine{margin-top:14px; font-size:12px; opacity:0.6; font-style:italic;}
+  .sprint-cta{display:inline-block; margin-top:20px; padding:13px 26px; font-weight:700; font-size:13px; border-radius:6px; background:var(--primary); color:var(--white); transition:transform .18s ease, box-shadow .18s ease;}
+  [data-theme="dark"] .sprint-cta{background:var(--highlight); color:var(--primary);}
+  .sprint-cta:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+  @media (max-width:640px){
+    .sprint-box{padding:24px 16px;}
+    .sprint-table thead{display:none;}
+    .sprint-table, .sprint-table tbody, .sprint-table tr, .sprint-table td{display:block; width:100%;}
+    .sprint-table tr{padding:12px 0; border-bottom:1px solid var(--card-border);}
+    .sprint-table td{border:none; padding:4px 0; display:flex; justify-content:space-between; gap:12px;}
+    .sprint-table td::before{content:attr(data-label); font-size:12px; font-weight:600; opacity:0.65;}
+    .sprint-table td:first-child::before{content:none;}
+    .sprint-table td:first-child{display:block; margin-bottom:4px;}
+  }
   @media (max-width:520px){
     nav .wrap{gap:10px;}
     .brand{font-size:15px; gap:7px;}
@@ -377,7 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1 class="reveal">Encuentra las fugas de ingreso<br>en tu motor comercial<br><span class="em-underline">en dos semanas.</span></h1>
     <p class="sub reveal">Auditoría, diagnóstico y roadmap priorizado para founders y CROs de SaaS y Fintech en LATAM que necesitan previsibilidad, no más esfuerzo.</p>
     <div class="cta-row reveal">
-      <a href="#contacto" class="btn-primary">Agenda diagnóstico gratuito de 20 min</a>
+      <a href="#contacto" class="btn-primary">Obtén tu Revenue Glass Score™ preliminar gratis</a>
       <a href="#oferta" class="btn-ghost">Ver qué incluye →</a>
     </div>
     <div class="hero-meta reveal">
@@ -435,6 +470,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="problem-card reveal"><h3>Calificación inconsistente</h3><p>Cada vendedor califica distinto; no hay metodología compartida.</p></div>
       <div class="problem-card reveal"><h3>Ciclo de venta largo</h3><p>Deals se estancan sin un proceso de etapas claro.</p></div>
       <div class="problem-card reveal"><h3>Sin roadmap priorizado</h3><p>Se atacan síntomas, no las causas de raíz.</p></div>
+    </div>
+    <div class="stat-band reveal">
+      <div class="stat-big">40%</div>
+      <p><b>El vendedor promedio dedica solo 40% de su tiempo a vender.</b> El otro 60% se va en procesos, administración y herramientas. Para la dirección, eso es productividad y crecimiento que no llegan.<span class="stat-src">Fuente: Salesforce, State of Sales, 7ª edición (2026).</span></p>
     </div>
   </div>
 </section>
@@ -530,7 +569,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
     </div>
-    <p class="scope-note reveal">El alcance se define en la llamada de diagnóstico de 20 minutos, según dónde esté hoy el problema.</p>
+    <p class="scope-note reveal">El alcance se define en la llamada gratuita de 20 minutos, según dónde esté hoy el problema.</p>
+
+    <div class="scope-head" style="margin-top:64px;">
+      <div class="kicker reveal">Define la forma de trabajo</div>
+      <h3 class="reveal" style="font-size:clamp(20px,2.6vw,26px); line-height:1.2; max-width:760px;">¿Detectamos la fuga, trabajamos con tu fuerza de ventas, o las dos cosas?</h3>
+      <p class="reveal" style="font-size:14.5px; opacity:0.7; max-width:660px; margin-top:10px;">Otros te dicen dónde está la fuga. Yo la encuentro y la corrijo con tu equipo, usando tus propios deals ganados y perdidos, no teoría de ventas.</p>
+    </div>
+
+    <div class="scope-grid">
+      <div class="scope-card reveal">
+        <div class="scope-tag">Diagnóstico</div>
+        <h4>Detectar la fuga</h4>
+        <p class="scope-q">¿Dónde exactamente se está perdiendo el ingreso?</p>
+        <ul>
+          <li>Revenue Glass Score™ y métricas por etapa</li>
+          <li>Hallazgos priorizados por impacto</li>
+          <li>Roadmap 30-60-90 días</li>
+          <li>Presentación ejecutiva de resultados</li>
+        </ul>
+      </div>
+      <div class="scope-card scope-featured reveal">
+        <div class="scope-tag scope-tag-gold">Sprint de Cierre · Nuevo</div>
+        <h4>Trabajar con tu fuerza de ventas</h4>
+        <p class="scope-q">Ya sabes dónde está el problema. ¿Cómo logras que tus vendedores lo corrijan?</p>
+        <ul>
+          <li>Playbook de cierre construido con tus deals ganados y perdidos</li>
+          <li>Criterios de calificación y de avance entre etapas</li>
+          <li>Revisión de llamadas y retroalimentación por vendedor</li>
+          <li>Mapa de tiempo no comercial por vendedor y cómo liberarlo</li>
+          <li>Línea base de KPIs de cierre y entrega al gerente</li>
+        </ul>
+        <div class="scope-meta">4 semanas · Precio fijo · Requiere diagnóstico previo</div>
+      </div>
+      <div class="scope-card reveal">
+        <div class="scope-tag">Diagnóstico + Sprint de Cierre</div>
+        <h4>Las dos cosas</h4>
+        <p class="scope-q">¿Cómo paso de saber el problema a corregirlo, sin cambiar de proveedor?</p>
+        <ul>
+          <li>Diagnóstico del alcance que elijas</li>
+          <li>Plan de trabajo con tu equipo, basado en los hallazgos</li>
+          <li>KPIs de cierre definidos desde el inicio</li>
+          <li>Un solo interlocutor de punta a punta</li>
+          <li>Precio de paquete, menor que por separado</li>
+        </ul>
+      </div>
+    </div>
+    <p class="scope-note reveal">Puedes empezar solo con el diagnóstico y decidir después si hacemos el Sprint de Cierre con tu equipo.</p>
   </div>
 </section>
 
@@ -665,6 +750,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <p class="reveal" style="margin-top:24px; font-size:12px; opacity:0.6; font-style:italic;">50% al inicio del sprint. 50% contra entrega del roadmap final.</p>
+
+    <div class="sprint-box reveal" id="sprint-cierre">
+      <div class="kicker">Siguiente paso · Nuevo</div>
+      <h3>Sprint de Cierre con tu equipo</h3>
+      <p class="sprint-sub">4 semanas trabajando con tus vendedores sobre los hallazgos del diagnóstico: playbook de cierre con tus propios deals, criterios de avance entre etapas, revisión de llamadas y KPIs de cierre. Un solo pago, alcance fijo.</p>
+      <table class="sprint-table">
+        <thead>
+          <tr><th>Equipo</th><th>Sprint de Cierre</th><th>Diagnóstico + Sprint</th><th>Ahorro del paquete</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tier">Starter</span><span class="aud">5–20 vendedores</span></td>
+            <td class="num" data-label="Sprint de Cierre">$4,500 USD</td>
+            <td class="num" data-label="Diagnóstico + Sprint">$5,200 USD</td>
+            <td class="save" data-label="Ahorro">$800 (−13%)</td>
+          </tr>
+          <tr>
+            <td><span class="tier">Growth</span><span class="aud">20–50 vendedores</span></td>
+            <td class="num" data-label="Sprint de Cierre">$7,500 USD</td>
+            <td class="num" data-label="Diagnóstico + Sprint">$8,900 USD</td>
+            <td class="save" data-label="Ahorro">$1,400 (−14%)</td>
+          </tr>
+          <tr>
+            <td><span class="tier">Scale-up</span><span class="aud">+50 vendedores</span></td>
+            <td class="num" data-label="Sprint de Cierre">$12,000 USD</td>
+            <td class="num" data-label="Diagnóstico + Sprint">$14,500 USD</td>
+            <td class="save" data-label="Ahorro">$2,000 (−12%)</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="sprint-guarantee"><b>Garantía de semana 2:</b> si al terminar la semana 2 el playbook no te convence, cancelas y no pagas el 50% restante.</div>
+      <p class="sprint-fine">El Sprint requiere un diagnóstico previo. Mismo esquema de pago: 50% al inicio, 50% contra entrega. Equipos de más de 100 vendedores o en varios países: a cotizar.</p>
+      <a href="#contacto" class="sprint-cta" data-interest="Ambos">Quiero el Sprint de Cierre</a>
+    </div>
   </div>
 </section>
 
@@ -681,8 +800,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <details class="faq-item reveal"><summary>¿Qué necesitan de mi lado para arrancar?<span class="chev" aria-hidden="true">⌄</span></summary><div class="faq-a">Acceso de lectura a tu CRM, 3-4 entrevistas con tu equipo comercial, y 45 minutos tuyos en el kickoff y en la presentación final.</div></details>
         <details class="faq-item reveal"><summary>¿Trabajan con equipos fuera de LATAM?<span class="chev" aria-hidden="true">⌄</span></summary><div class="faq-a">Sí. El diagnóstico es 100% remoto, así que funciona igual con equipos en US, LATAM o distribuidos.</div></details>
         <details class="faq-item reveal"><summary>¿Cómo se diferencia esto de contratar una consultora tradicional?<span class="chev" aria-hidden="true">⌄</span></summary><div class="faq-a">No cobro por hora ni entrego un informe genérico. Es un sprint con alcance fijo, precio fijo, y un roadmap accionable, no un diagnóstico de 40 páginas que nadie ejecuta.</div></details>
-        <details class="faq-item reveal"><summary>¿Qué pasa después del diagnóstico?<span class="chev" aria-hidden="true">⌄</span></summary><div class="faq-a">Te quedas con el roadmap y la libertad de ejecutarlo con tu equipo. Si quieres acompañamiento en la ejecución, lo conversamos como una fase separada.</div></details>
-        <details class="faq-item reveal"><summary>¿Ofrecen alguna garantía?<span class="chev" aria-hidden="true">⌄</span></summary><div class="faq-a">Si al final del sprint sientes que no obtuviste claridad accionable, no cobro el segundo pago.</div></details>
+        <details class="faq-item reveal"><summary>¿Qué pasa después del diagnóstico?<span class="chev" aria-hidden="true">⌄</span></summary><div class="faq-a">Te quedas con el roadmap. Si quieres que lo implementemos con tu equipo, lo hacemos como un Sprint de Cierre de 4 semanas, con precio fijo y un solo pago.</div></details>
+        <details class="faq-item reveal"><summary>¿El diagnóstico tiene garantía?<span class="chev" aria-hidden="true">⌄</span></summary><div class="faq-a">Sí. Si al final del sprint de diagnóstico sientes que no obtuviste claridad accionable, no cobro el segundo pago.</div></details>
+        <details class="faq-item reveal"><summary>¿El Sprint de Cierre tiene garantía?<span class="chev" aria-hidden="true">⌄</span></summary><div class="faq-a">Sí. Al terminar la semana 2 revisamos juntos el playbook construido con tus deals. Si no lo apruebas, cancelamos y no pagas el segundo 50%. La garantía aplica cuando tu equipo participa en las sesiones y tenemos acceso al CRM.</div></details>
+        <details class="faq-item reveal"><summary>¿Es una capacitación tradicional?<span class="chev" aria-hidden="true">⌄</span></summary><div class="faq-a">No. Trabajamos con tus deals reales y medimos con KPIs de cierre, no con encuestas de satisfacción.</div></details>
+        <details class="faq-item reveal"><summary>¿Puedo contratar solo el Sprint de Cierre?<span class="chev" aria-hidden="true">⌄</span></summary><div class="faq-a">Requiere un diagnóstico previo, mínimo el de Cierre. Sin saber dónde está la fuga, el trabajo con tu equipo sería teoría. Si contratas ambos, el paquete cuesta menos que por separado.</div></details>
         <details class="faq-item reveal"><summary>¿Es confidencial la información que comparto?<span class="chev" aria-hidden="true">⌄</span></summary><div class="faq-a">Sí. Firmamos un NDA antes de tocar cualquier dato de tu CRM o de tu equipo.</div></details>
         <details class="faq-item reveal"><summary>¿Aceptan pagos en pesos o solo en USD?<span class="chev" aria-hidden="true">⌄</span></summary><div class="faq-a">El precio se cotiza en USD, pero se puede facturar en pesos mexicanos al tipo de cambio del día del pago.</div></details>
       </div>
@@ -750,8 +872,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head" style="text-align:center;">
       <div class="kicker reveal" style="justify-content:center;">Próximo paso</div>
-      <h2 class="reveal breathe">¿Empezamos con un diagnóstico gratuito de 20 minutos?</h2>
-      <p class="reveal">Sin costo, sin compromiso. Salimos con un mapa preliminar de dónde están las oportunidades más grandes en tu proceso comercial.</p>
+      <h2 class="reveal breathe">¿Empezamos con tu Revenue Glass Score™ preliminar?</h2>
+      <p class="reveal">Gratis, 20 minutos, sin compromiso. Salimos con un score preliminar y un mapa de dónde están las oportunidades más grandes en tu proceso comercial.</p>
     </div>
     <form class="lead reveal" id="leadForm">
       <label for="name">Nombre</label>
@@ -766,7 +888,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <option>20–50 vendedores</option>
         <option>+50 vendedores</option>
       </select>
-      <button type="submit" class="btn-primary form-submit">Agendar diagnóstico gratuito</button>
+      <label for="interest">¿Qué te interesa?</label>
+      <select id="interest">
+        <option>Diagnóstico</option>
+        <option>Sprint de Cierre con mi equipo</option>
+        <option>Ambos</option>
+      </select>
+      <button type="submit" class="btn-primary form-submit">Obtener mi score preliminar</button>
       <p id="formMsg" class="form-msg" role="status" aria-live="polite" hidden></p>
     </form>
     <p class="reveal" style="margin-top:32px; font-size:13.5px;">
@@ -784,7 +912,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           COVA <span>REVENUE</span>
         </div>
         <div class="brand-tagline">REVENUE GROWTH CONSULTING</div>
-        <p>Diagnóstico comercial B2B para founders y CROs de SaaS y Fintech en LATAM.</p>
+        <p>Diagnóstico comercial B2B y Sprint de Cierre para founders y CROs de SaaS y Fintech en LATAM.</p>
         <div class="footer-contact">
           +52 444 846 7204<br>
           john@covarevenue.com<br>
@@ -922,15 +1050,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // Footer link: still tries mailto, and also copies the address so it works without a mail app
   document.getElementById('mailLink').addEventListener('click', copyEmail);
 
+  // Preselect interest when a Sprint CTA is clicked
+  document.querySelectorAll('[data-interest]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var sel = document.getElementById('interest');
+      if(sel) sel.value = a.getAttribute('data-interest');
+      try{ (window.dataLayer = window.dataLayer || []).push({event:'sprint_cta_click', lead_interest: a.getAttribute('data-interest')}); }catch(err){}
+    });
+  });
+
   document.getElementById('leadForm').addEventListener('submit', function(e){
     e.preventDefault();
     const name = document.getElementById('name').value;
     const company = document.getElementById('company').value;
     const email = document.getElementById('email').value;
     const size = document.getElementById('size').value;
-    const subject = encodeURIComponent('Diagnóstico comercial: ' + company);
-    const bodyRaw = 'Nombre: ' + name + '\nEmpresa: ' + company + '\nEmail: ' + email + '\nTamaño de equipo: ' + size + '\n\nQuiero agendar el diagnóstico comercial gratuito de 20 minutos.';
-    const wa = 'https://wa.me/524448467204?text=' + encodeURIComponent('Hola John, quiero agendar un diagnóstico comercial gratuito.\n' + bodyRaw);
+    const interest = document.getElementById('interest').value;
+    try{ (window.dataLayer = window.dataLayer || []).push({event:'lead_form_submit', lead_interest: interest, team_size: size}); }catch(err){}
+    const subject = encodeURIComponent('Revenue Glass Score preliminar (' + interest + '): ' + company);
+    const bodyRaw = 'Nombre: ' + name + '\nEmpresa: ' + company + '\nEmail: ' + email + '\nTamaño de equipo: ' + size + '\nMe interesa: ' + interest + '\n\nQuiero agendar la llamada gratuita de 20 minutos para mi Revenue Glass Score preliminar.';
+    const wa = 'https://wa.me/524448467204?text=' + encodeURIComponent('Hola John, quiero agendar mi Revenue Glass Score preliminar.\n' + bodyRaw);
     const msg = document.getElementById('formMsg');
     msg.innerHTML = 'Listo. Si tu programa de correo no se abrió, envíame estos datos por <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a> o escribe a <strong>' + EMAIL + '</strong>.';
     msg.hidden = false;
