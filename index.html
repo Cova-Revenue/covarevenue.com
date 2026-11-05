@@ -307,6 +307,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .footer-col a:hover{color:var(--white);}
   .footer-bottom{border-top:1px solid rgba(255,255,255,0.08); padding-top:24px; text-align:center; font-size:12px; color:#7C86A3;}
   @media (max-width:768px){ .footer-grid{grid-template-columns:1fr; gap:32px;} }
+
+  .scope-head{margin-top:72px; margin-bottom:28px;}
+  .scope-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .scope-card{background:var(--card-bg); color:var(--card-text); border:1px solid rgba(244,180,0,0.35); border-radius:12px; padding:26px 24px; transition:transform .25s ease, box-shadow .25s ease;}
+  .scope-card:hover{transform:translateY(-5px); box-shadow:0 14px 30px rgba(0,184,184,0.16);}
+  .scope-card h4{font-size:17px; font-weight:800; margin:10px 0 8px;}
+  .scope-q{font-size:13.5px; font-weight:600; line-height:1.4; margin-bottom:14px; opacity:0.9;}
+  .scope-card ul{list-style:none; padding:0; margin:0;}
+  .scope-card li{font-size:13px; padding:7px 0; border-top:1px solid var(--card-border); opacity:0.8;}
+  .scope-tag{display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--kicker-color);}
+  .scope-tag-gold{color:#B8860B;}
+  [data-theme="dark"] .scope-tag-gold{color:var(--highlight);}
+  .scope-featured{background:var(--primary); color:#fff; border-color:var(--highlight); box-shadow:0 0 0 1px rgba(244,180,0,0.3);}
+  .scope-featured li{border-top-color:rgba(255,255,255,0.12);}
+  .scope-note{margin-top:22px; font-size:12.5px; opacity:0.65; font-style:italic; text-align:center;}
+  @media (max-width:900px){.scope-grid{grid-template-columns:1fr;} .scope-head{margin-top:52px;}}
+  @media (max-width:520px){
+    nav .wrap{gap:10px;}
+    .brand{font-size:15px; gap:7px;}
+    .nav-cta{white-space:nowrap; padding:8px 12px; font-size:12px;}
+    .nav-right{gap:8px;}
+  }
+
+  .video-fallback{text-align:center; font-size:12.5px; opacity:0.75; margin-top:14px;}
+  .video-fallback a{color:var(--kicker-color); font-weight:700; text-decoration:underline;}
+  .form-msg{margin-top:14px; font-size:13px; line-height:1.5; text-align:center; padding:12px 14px; border:1px solid rgba(244,180,0,0.45); border-radius:8px; background:rgba(244,180,0,0.08);}
+  .form-msg a{color:var(--kicker-color); font-weight:700; text-decoration:underline;}
+  .toast{position:fixed; left:50%; bottom:92px; transform:translate(-50%,20px); background:var(--primary-dark); color:#fff; font-size:13px; padding:11px 18px; border-radius:8px; border:1px solid rgba(244,180,0,0.5); opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease; z-index:120; max-width:90vw; text-align:center;}
+  .toast.show{opacity:1; transform:translate(-50%,0);}
 </style>
 <script type="text/javascript" async src="https://play.vidyard.com/embed/v4.js"></script>
 
@@ -375,6 +404,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         alt="Elimina Fugas y Aumenta Ventas"
       />
     </div>
+    <p class="video-fallback reveal">¿No carga el video? <a href="https://share.vidyard.com/watch/9Knh5BYvsE5GhiSWFH1y8m" target="_blank" rel="noopener">Míralo aquí</a></p>
   </div>
 </section>
 
@@ -458,6 +488,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Dueños de empresas B2B, SaaS y Fintech en etapa Serie A–C, buscando previsibilidad antes de escalar.</p>
       </div>
     </div>
+
+    <div class="scope-head">
+      <div class="kicker reveal">Define el alcance</div>
+      <h3 class="reveal" style="font-size:clamp(20px,2.6vw,26px); line-height:1.2; max-width:720px;">Tu pipeline llega a propuesta. ¿Por qué no llega a cierre?</h3>
+      <p class="reveal" style="font-size:14.5px; opacity:0.7; max-width:640px; margin-top:10px;">Contratar más vendedores no resuelve un problema que todavía no está ubicado. Elige dónde diagnosticar: la entrada del pipeline, el cierre, o el proceso completo.</p>
+    </div>
+
+    <div class="scope-grid">
+      <div class="scope-card reveal">
+        <div class="scope-tag">Etapas 01 a 04</div>
+        <h4>Diagnóstico de Pipeline</h4>
+        <p class="scope-q">¿Por qué no entra suficiente pipeline de calidad?</p>
+        <ul>
+          <li>ICP y segmentación</li>
+          <li>Prospección y messaging</li>
+          <li>Calificación y discovery</li>
+          <li>Coverage y aging del pipeline</li>
+        </ul>
+      </div>
+      <div class="scope-card scope-featured reveal">
+        <div class="scope-tag scope-tag-gold">Etapas 05 a 07 · Nuevo</div>
+        <h4>Diagnóstico de Cierre</h4>
+        <p class="scope-q">¿Por qué el pipeline que sí llega a propuesta no se convierte en ingreso?</p>
+        <ul>
+          <li>Late-stage win rate (Ganados ÷ Negociación)</li>
+          <li>Variación de close rate entre vendedores</li>
+          <li>Tasa de descuento y deals estancados</li>
+          <li>Ciclo de negociación y manejo de objeciones</li>
+        </ul>
+      </div>
+      <div class="scope-card reveal">
+        <div class="scope-tag">Etapas 01 a 07</div>
+        <h4>Diagnóstico Completo</h4>
+        <p class="scope-q">¿Dónde está la fuga, de punta a punta?</p>
+        <ul>
+          <li>Las dos preguntas anteriores</li>
+          <li>Revenue Glass Score™ completo</li>
+          <li>Un solo roadmap 30-60-90</li>
+          <li>Priorizado por impacto en revenue</li>
+        </ul>
+      </div>
+    </div>
+    <p class="scope-note reveal">El alcance se define en la llamada de diagnóstico de 20 minutos, según dónde esté hoy el problema.</p>
   </div>
 </section>
 
@@ -694,6 +767,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <option>+50 vendedores</option>
       </select>
       <button type="submit" class="btn-primary form-submit">Agendar diagnóstico gratuito</button>
+      <p id="formMsg" class="form-msg" role="status" aria-live="polite" hidden></p>
     </form>
     <p class="reveal" style="margin-top:32px; font-size:13.5px;">
       O escríbeme directo por <a href="https://wa.me/524448467204?text=Hola%20John%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20comercial%20gratuito" class="wa-link" target="_blank" rel="noopener">WhatsApp</a>
@@ -726,7 +800,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="footer-col">
         <h4>Contacto directo</h4>
-        <a href="mailto:john@covarevenue.com">Escribir por correo</a>
+        <a href="mailto:john@covarevenue.com" id="mailLink">Escribir por correo</a>
         <a href="https://wa.me/524448467204" target="_blank" rel="noopener">WhatsApp</a>
         <a href="#faq">Preguntas frecuentes</a>
         <a href="#contacto">Agendar diagnóstico</a>
@@ -830,6 +904,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
+  const EMAIL = 'john@covarevenue.com';
+  function showToast(msg){
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(window.__toastT);
+    window.__toastT = setTimeout(() => t.classList.remove('show'), 3500);
+  }
+  function copyEmail(){
+    try{
+      return navigator.clipboard.writeText(EMAIL).then(
+        () => showToast('Correo copiado: ' + EMAIL),
+        () => showToast('Escríbeme a: ' + EMAIL)
+      );
+    }catch(e){ showToast('Escríbeme a: ' + EMAIL); }
+  }
+  // Footer link: still tries mailto, and also copies the address so it works without a mail app
+  document.getElementById('mailLink').addEventListener('click', copyEmail);
+
   document.getElementById('leadForm').addEventListener('submit', function(e){
     e.preventDefault();
     const name = document.getElementById('name').value;
@@ -837,10 +929,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const email = document.getElementById('email').value;
     const size = document.getElementById('size').value;
     const subject = encodeURIComponent('Diagnóstico comercial: ' + company);
-    const body = encodeURIComponent('Nombre: ' + name + '\nEmpresa: ' + company + '\nEmail: ' + email + '\nTamaño de equipo: ' + size + '\n\nQuiero agendar el diagnóstico comercial gratuito de 20 minutos.');
-    window.location.href = 'mailto:john@covarevenue.com?subject=' + subject + '&body=' + body;
+    const bodyRaw = 'Nombre: ' + name + '\nEmpresa: ' + company + '\nEmail: ' + email + '\nTamaño de equipo: ' + size + '\n\nQuiero agendar el diagnóstico comercial gratuito de 20 minutos.';
+    const wa = 'https://wa.me/524448467204?text=' + encodeURIComponent('Hola John, quiero agendar un diagnóstico comercial gratuito.\n' + bodyRaw);
+    const msg = document.getElementById('formMsg');
+    msg.innerHTML = 'Listo. Si tu programa de correo no se abrió, envíame estos datos por <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a> o escribe a <strong>' + EMAIL + '</strong>.';
+    msg.hidden = false;
+    window.location.href = 'mailto:' + EMAIL + '?subject=' + subject + '&body=' + encodeURIComponent(bodyRaw);
   });
 </script>
 
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
