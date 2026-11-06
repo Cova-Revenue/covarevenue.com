@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://covarevenue.com/sitemap.xml
+Sitemap: https://www.covarevenue.com/sitemap.xml
