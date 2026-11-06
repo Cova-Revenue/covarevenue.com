@@ -387,6 +387,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .video-fallback a{color:var(--kicker-color); font-weight:700; text-decoration:underline;}
   .form-msg{margin-top:14px; font-size:13px; line-height:1.5; text-align:center; padding:12px 14px; border:1px solid rgba(244,180,0,0.45); border-radius:8px; background:rgba(244,180,0,0.08);}
   .form-msg a{color:var(--kicker-color); font-weight:700; text-decoration:underline;}
+  .agenda-btn{display:inline-block; margin-top:12px; padding:12px 22px; border-radius:6px; background:var(--primary); color:#fff !important; font-weight:700; font-size:14px; text-decoration:none !important;}
+  [data-theme="dark"] .agenda-btn{background:var(--highlight); color:var(--primary) !important;}
   .form-privacy{margin-top:10px; font-size:11.5px; opacity:0.6; text-align:center;}
   .form-submit[disabled]{opacity:0.6; cursor:wait; animation:none;}
   .toast{position:fixed; left:50%; bottom:92px; transform:translate(-50%,20px); background:var(--primary-dark); color:#fff; font-size:13px; padding:11px 18px; border-radius:8px; border:1px solid rgba(244,180,0,0.5); opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease; z-index:120; max-width:90vw; text-align:center;}
@@ -1098,6 +1100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const HUBSPOT_PORTAL_ID = '52274975';
   const HUBSPOT_FORM_ID   = '09f70af8-820c-464a-9554-4900c679857f';
   const WA_NUMBER = '524448467204';
+  const AGENDA_URL = 'https://meetings.hubspot.com/johncova77';
 
   function dl(obj){ try{ (window.dataLayer = window.dataLayer || []).push(obj); }catch(err){} }
   function escapeHtml(t){ return String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -1116,6 +1119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const href = a.getAttribute('href') || '';
     if(href.indexOf('https://wa.me/') === 0) dl({event:'whatsapp_click', click_location: clickLocation(a)});
     else if(href.indexOf('mailto:') === 0) dl({event:'email_click', click_location: clickLocation(a)});
+    else if(href.indexOf('https://meetings.hubspot.com/') === 0) dl({event:'meeting_click', click_location: 'formulario_contacto'});
   }, true);
 
   document.getElementById('leadForm').addEventListener('submit', async function(e){
@@ -1159,7 +1163,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
       if(!res.ok) throw new Error('HubSpot ' + res.status);
       dl({event:'lead_form_submit', lead_interest: interest, team_size: size});
-      msg.innerHTML = '<strong>Listo, ' + escapeHtml(name) + '.</strong> Recibí tu solicitud y te escribo a ' + escapeHtml(email) + ' para agendar la llamada. Si prefieres, también puedes escribirme por <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>.';
+      msg.innerHTML = '<strong>Listo, ' + escapeHtml(name) + '.</strong> Recibí tu solicitud. Elige ahora el horario de tu llamada de 20 minutos:<br><a class="agenda-btn" href="' + AGENDA_URL + '?firstName=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '" target="_blank" rel="noopener">Agenda tus 20 minutos ahora</a><br><span style="font-size:12px; opacity:0.75;">Si prefieres, te escribo a ' + escapeHtml(email) + ' o escríbeme por <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>.</span>';
       msg.hidden = false;
       e.target.reset();
     }catch(err){
