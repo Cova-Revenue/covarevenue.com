@@ -369,6 +369,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .video-fallback a{color:var(--kicker-color); font-weight:700; text-decoration:underline;}
   .form-msg{margin-top:14px; font-size:13px; line-height:1.5; text-align:center; padding:12px 14px; border:1px solid rgba(244,180,0,0.45); border-radius:8px; background:rgba(244,180,0,0.08);}
   .form-msg a{color:var(--kicker-color); font-weight:700; text-decoration:underline;}
+  .form-privacy{margin-top:10px; font-size:11.5px; opacity:0.6; text-align:center;}
+  .form-submit[disabled]{opacity:0.6; cursor:wait; animation:none;}
   .toast{position:fixed; left:50%; bottom:92px; transform:translate(-50%,20px); background:var(--primary-dark); color:#fff; font-size:13px; padding:11px 18px; border-radius:8px; border:1px solid rgba(244,180,0,0.5); opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease; z-index:120; max-width:90vw; text-align:center;}
   .toast.show{opacity:1; transform:translate(-50%,0);}
 </style>
@@ -894,7 +896,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <option>Sprint de Cierre con mi equipo</option>
         <option>Ambos</option>
       </select>
-      <button type="submit" class="btn-primary form-submit">Obtener mi score preliminar</button>
+      <button type="submit" class="btn-primary form-submit" id="formSubmit">Obtener mi score preliminar</button>
+      <p class="form-privacy">Uso tus datos solo para contactarte sobre esta solicitud.</p>
       <p id="formMsg" class="form-msg" role="status" aria-live="polite" hidden></p>
     </form>
     <p class="reveal" style="margin-top:32px; font-size:13.5px;">
@@ -1059,21 +1062,81 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
-  document.getElementById('leadForm').addEventListener('submit', function(e){
+  // ---- HubSpot ----
+  // Datos de tu cuenta de HubSpot. Mientras estén vacíos, el formulario usa el respaldo (correo / WhatsApp).
+  const HUBSPOT_PORTAL_ID = '52274975';
+  const HUBSPOT_FORM_ID   = '09f70af8-820c-464a-9554-4900c679857f';
+  const WA_NUMBER = '524448467204';
+
+  function dl(obj){ try{ (window.dataLayer = window.dataLayer || []).push(obj); }catch(err){} }
+  function escapeHtml(t){ return String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  function getCookie(n){ const m = document.cookie.match('(^|;)\\s*' + n + '=([^;]*)'); return m ? decodeURIComponent(m[2]) : undefined; }
+
+  // ---- Medición de clics en WhatsApp y correo ----
+  function clickLocation(a){
+    if(a.classList.contains('wa-float')) return 'boton_flotante';
+    const box = a.closest('section[id], footer, nav');
+    if(!box) return 'otro';
+    return box.id || box.tagName.toLowerCase();
+  }
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('a[href]');
+    if(!a) return;
+    const href = a.getAttribute('href') || '';
+    if(href.indexOf('https://wa.me/') === 0) dl({event:'whatsapp_click', click_location: clickLocation(a)});
+    else if(href.indexOf('mailto:') === 0) dl({event:'email_click', click_location: clickLocation(a)});
+  }, true);
+
+  document.getElementById('leadForm').addEventListener('submit', async function(e){
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const company = document.getElementById('company').value;
-    const email = document.getElementById('email').value;
+    const name = document.getElementById('name').value.trim();
+    const company = document.getElementById('company').value.trim();
+    const email = document.getElementById('email').value.trim();
     const size = document.getElementById('size').value;
     const interest = document.getElementById('interest').value;
-    try{ (window.dataLayer = window.dataLayer || []).push({event:'lead_form_submit', lead_interest: interest, team_size: size}); }catch(err){}
-    const subject = encodeURIComponent('Revenue Glass Score preliminar (' + interest + '): ' + company);
-    const bodyRaw = 'Nombre: ' + name + '\nEmpresa: ' + company + '\nEmail: ' + email + '\nTamaño de equipo: ' + size + '\nMe interesa: ' + interest + '\n\nQuiero agendar la llamada gratuita de 20 minutos para mi Revenue Glass Score preliminar.';
-    const wa = 'https://wa.me/524448467204?text=' + encodeURIComponent('Hola John, quiero agendar mi Revenue Glass Score preliminar.\n' + bodyRaw);
     const msg = document.getElementById('formMsg');
-    msg.innerHTML = 'Listo. Si tu programa de correo no se abrió, envíame estos datos por <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a> o escribe a <strong>' + EMAIL + '</strong>.';
-    msg.hidden = false;
-    window.location.href = 'mailto:' + EMAIL + '?subject=' + subject + '&body=' + encodeURIComponent(bodyRaw);
+    const btn = document.getElementById('formSubmit');
+
+    const bodyRaw = 'Nombre: ' + name + '\nEmpresa: ' + company + '\nEmail: ' + email + '\nTamaño de equipo: ' + size + '\nMe interesa: ' + interest + '\n\nQuiero agendar la llamada gratuita de 20 minutos para mi Revenue Glass Score preliminar.';
+    const wa = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent('Hola John, quiero agendar mi Revenue Glass Score preliminar.\n' + bodyRaw);
+    const mail = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Revenue Glass Score preliminar (' + interest + '): ' + company) + '&body=' + encodeURIComponent(bodyRaw);
+
+    function showFallback(){
+      msg.innerHTML = 'No pude registrar tu solicitud automáticamente. Envíamela en un clic por <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a> o por <a href="' + mail + '">correo</a> a <strong>' + EMAIL + '</strong>.';
+      msg.hidden = false;
+    }
+
+    if(!HUBSPOT_PORTAL_ID || !HUBSPOT_FORM_ID){ showFallback(); return; }
+
+    btn.disabled = true; const label = btn.textContent; btn.textContent = 'Enviando…';
+    try{
+      const ctx = { pageUri: location.href, pageName: document.title };
+      const hutk = getCookie('hubspotutk'); if(hutk) ctx.hutk = hutk;
+      const res = await fetch('https://api.hsforms.com/submissions/v3/integration/submit/' + HUBSPOT_PORTAL_ID + '/' + HUBSPOT_FORM_ID, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fields: [
+            { objectTypeId: '0-1', name: 'firstname', value: name },
+            { objectTypeId: '0-1', name: 'company', value: company },
+            { objectTypeId: '0-1', name: 'email', value: email },
+            { objectTypeId: '0-1', name: 'team_size', value: size },
+            { objectTypeId: '0-1', name: 'lead_interest', value: interest }
+          ],
+          context: ctx
+        })
+      });
+      if(!res.ok) throw new Error('HubSpot ' + res.status);
+      dl({event:'lead_form_submit', lead_interest: interest, team_size: size});
+      msg.innerHTML = '<strong>Listo, ' + escapeHtml(name) + '.</strong> Recibí tu solicitud y te escribo a ' + escapeHtml(email) + ' para agendar la llamada. Si prefieres, también puedes escribirme por <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>.';
+      msg.hidden = false;
+      e.target.reset();
+    }catch(err){
+      dl({event:'lead_form_error', error_message: String(err && err.message || err)});
+      showFallback();
+    }finally{
+      btn.disabled = false; btn.textContent = label;
+    }
   });
 </script>
 
