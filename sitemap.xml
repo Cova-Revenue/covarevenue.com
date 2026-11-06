@@ -16,4 +16,16 @@
     <loc>https://www.covarevenue.com/revenue-glass-score/</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.covarevenue.com/blog/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.covarevenue.com/blog/pipeline-llega-a-propuesta-pero-no-cierra/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.covarevenue.com/blog/como-calcular-cobertura-de-pipeline/</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
