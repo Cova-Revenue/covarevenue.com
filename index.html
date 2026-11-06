@@ -16,7 +16,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>Diagnóstico Comercial y Capacitación de Ventas B2B | Cova Revenue</title>
 <meta name="description" content="Diagnóstico comercial B2B y Sprint de Cierre con tu equipo de ventas para SaaS y Fintech en LATAM. Auditoría de pipeline, RevOps, forecast y playbook de cierre con tus propios deals.">
 <meta name="keywords" content="diagnóstico comercial, consultoría comercial, auditoría comercial, revenue operations, RevOps, optimización comercial, estrategia comercial, consultoría de ventas, crecimiento B2B, pipeline de ventas, forecast comercial, proceso comercial, motor comercial, sales consulting, sales audit">
-<link rel="canonical" href="https://covarevenue.com/">
+<link rel="canonical" href="https://www.covarevenue.com/">
 
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -28,7 +28,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:title" content="Diagnóstico Comercial y Capacitación de Ventas B2B | Cova Revenue">
 <meta property="og:description" content="Encuentra las fugas de ingreso en tu motor comercial en dos semanas. Diagnóstico y consultoría comercial B2B, Revenue Operations para SaaS y Fintech en LATAM.">
 <meta property="og:image" content="https://covarevenue.com/og-image.png">
-<meta property="og:url" content="https://covarevenue.com">
+<meta property="og:url" content="https://www.covarevenue.com/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 
@@ -46,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "@type": "ProfessionalService",
   "name": "Cova Revenue",
   "alternateName": "Cova Revenue - Revenue Growth Consulting",
-  "url": "https://covarevenue.com",
+  "url": "https://www.covarevenue.com/",
   "logo": "https://covarevenue.com/favicon-192.png",
   "image": "https://covarevenue.com/og-image.png",
   "description": "Diagnóstico y consultoría comercial B2B para founders y CROs de SaaS y Fintech en LATAM. Auditoría de pipeline, Revenue Operations y forecast.",
@@ -323,6 +323,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .scope-featured li{border-top-color:rgba(255,255,255,0.12);}
   .scope-note{margin-top:22px; font-size:12.5px; opacity:0.65; font-style:italic; text-align:center;}
   @media (max-width:900px){.scope-grid{grid-template-columns:1fr;} .scope-head{margin-top:52px;}}
+  .scope-more{display:inline-block; margin-top:14px; font-size:12.5px; font-weight:700; color:var(--kicker-color); border-bottom:1px solid currentColor;}
+  .scope-featured .scope-more{color:var(--highlight);}
   .scope-meta{margin-top:14px; font-size:11.5px; font-weight:700; letter-spacing:0.04em; color:var(--highlight);}
   .stat-band{margin-top:36px; display:flex; align-items:center; gap:28px; background:var(--primary); color:#fff; border:1px solid rgba(244,180,0,0.4); border-radius:12px; padding:28px 32px;}
   .stat-band .stat-big{font-size:clamp(40px,6vw,56px); font-weight:800; color:var(--highlight); line-height:1; flex-shrink:0;}
@@ -590,6 +592,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>Roadmap 30-60-90 días</li>
           <li>Presentación ejecutiva de resultados</li>
         </ul>
+        <a class="scope-more" href="/diagnostico-comercial/">Ver detalle del diagnóstico →</a>
       </div>
       <div class="scope-card scope-featured reveal">
         <div class="scope-tag scope-tag-gold">Sprint de Cierre</div>
@@ -603,6 +606,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>Línea base de KPIs de cierre y entrega al gerente</li>
         </ul>
         <div class="scope-meta">4 semanas · Precio fijo · Requiere diagnóstico previo</div>
+        <a class="scope-more" href="/capacitacion-ventas-b2b/">Ver detalle de la capacitación →</a>
       </div>
       <div class="scope-card reveal">
         <div class="scope-tag">Diagnóstico + Sprint de Cierre</div>
@@ -928,6 +932,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="#oferta">La oferta</a>
         <a href="#inversion">Inversión</a>
         <a href="#sobre-mi">Sobre mí</a>
+        <a href="/diagnostico-comercial/">Diagnóstico comercial</a>
+        <a href="/capacitacion-ventas-b2b/">Capacitación de ventas B2B</a>
       </div>
       <div class="footer-col">
         <h4>Contacto directo</h4>
@@ -1052,6 +1058,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   // Footer link: still tries mailto, and also copies the address so it works without a mail app
   document.getElementById('mailLink').addEventListener('click', copyEmail);
+
+  // Preselect interest from service pages (?interes=...)
+  try{
+    var qi = new URLSearchParams(location.search).get('interes');
+    var sel0 = document.getElementById('interest');
+    if(qi && sel0 && Array.prototype.some.call(sel0.options, function(o){ return o.value === qi; })) sel0.value = qi;
+  }catch(err){}
 
   // Preselect interest when a Sprint CTA is clicked
   document.querySelectorAll('[data-interest]').forEach(function(a){
