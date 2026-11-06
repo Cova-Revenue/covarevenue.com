@@ -14,6 +14,7 @@
     var a=e.target.closest('a[href]'); if(!a) return; var h=a.getAttribute('href')||'';
     if(h.indexOf('https://wa.me/')===0) dl({event:'whatsapp_click', click_location: page+'_'+loc(a)});
     else if(h.indexOf('mailto:')===0) dl({event:'email_click', click_location: page+'_'+loc(a)});
+    else if(h.indexOf('https://meetings.hubspot.com/')===0) dl({event:'meeting_click', click_location: page});
     else if(a.hasAttribute('data-interest')) dl({event:'sprint_cta_click', lead_interest: a.getAttribute('data-interest')});
   },true);
 })();

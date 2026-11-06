@@ -337,3 +337,6 @@
 .cred span{font-size:13px; color:#C3CADE; line-height:1.45;}
 @media (max-width:900px){ .steps, .steps.two, .cred{grid-template-columns:1fr 1fr;} }
 @media (max-width:600px){ .steps, .steps.two, .cred, .checks{grid-template-columns:1fr;} .page-hero{padding:100px 0 64px;} }
+
+.agenda-btn{display:inline-block; margin-top:12px; padding:12px 22px; border-radius:6px; background:var(--primary); color:#fff !important; font-weight:700; font-size:14px; text-decoration:none !important;}
+[data-theme="dark"] .agenda-btn{background:var(--highlight); color:var(--primary) !important;}

@@ -6,6 +6,7 @@
   var HUBSPOT_FORM_ID   = '09f70af8-820c-464a-9554-4900c679857f';
   var EMAIL = 'john@covarevenue.com';
   var WA_NUMBER = '524448467204';
+  var AGENDA_URL = 'https://meetings.hubspot.com/johncova77';
 
   var NS = 'No lo sé / no lo medimos';
   var Q = [
@@ -153,7 +154,7 @@
       });
       if(!res.ok) throw new Error('HubSpot ' + res.status);
       dl({event:'lead_form_submit', lead_interest:'Revenue Glass Score', team_size:size, glass_score:result.total});
-      msg.innerHTML = '<strong>Listo, ' + esc(name) + '.</strong> Recibí tu score (' + result.total + '/100). Te escribo a ' + esc(email) + ' con el análisis y para agendar la llamada. También puedes escribirme por <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>.';
+      msg.innerHTML = '<strong>Listo, ' + esc(name) + '.</strong> Recibí tu score (' + result.total + '/100). Elige ahora el horario para revisarlo juntos en 20 minutos:<br><a class="agenda-btn" href="' + AGENDA_URL + '?firstName=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '" target="_blank" rel="noopener">Agenda tus 20 minutos ahora</a><br><span style="font-size:12px; opacity:0.75;">Si prefieres, te escribo a ' + esc(email) + ' o escríbeme por <a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>.</span>';
       msg.hidden = false; e.target.reset();
     }catch(err){
       dl({event:'lead_form_error', error_message:String(err && err.message || err)});
